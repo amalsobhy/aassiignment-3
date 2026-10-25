@@ -1,0 +1,35 @@
+public class NumberStatistics {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int largest = Integer.MIN_VALUE;
+        int smallest = Integer.MAX_VALUE;
+        int sum = 0;
+        int count = 0;
+
+        System.out.println("Enter positive integers (enter 0 to stop):");
+        int num = scanner.nextInt();
+
+        while (num != 0) {
+            if (num > largest) {
+                largest = num;
+            }
+            if (num < smallest) {
+                smallest = num;
+            }
+            sum += num;
+            count++;
+
+            num = scanner.nextInt();
+        }
+
+        if (count > 0) {
+            double average = (double) sum / count;
+            System.out.println("Largest number: " + largest);
+            System.out.println("Smallest number: " + smallest);
+            System.out.println("Average: " + average);
+        } else {
+            System.out.println("No numbers were entered.");
+        }
+        scanner.close();
+    }
+}

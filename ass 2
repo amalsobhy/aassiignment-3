@@ -1,0 +1,18 @@
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer n: ");
+        int n = scanner.nextInt();
+        
+        int sum = 0;
+        int temp = n;
+        
+        while (temp > 0) {
+            sum += temp % 10; // Extract the last digit and add to sum
+            temp /= 10;       // Remove the last digit
+        }
+        
+        System.out.println("The sum of the digits of " + n + " is: " + sum);
+        scanner.close();
+    }
+}
